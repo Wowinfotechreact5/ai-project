@@ -1,3 +1,5 @@
+import { FiSidebar } from "react-icons/fi";
+
 export default function SubSidebar({ state, onToggleSize }) {
       if (state === "closed") return null;
 
@@ -5,10 +7,16 @@ export default function SubSidebar({ state, onToggleSize }) {
             <aside className={`sub-sidebar ${state}`}>
                   {/* top */}
                   <div>
-                        <div className="sub-header">
-                              {state === "expanded" && <p style={{ color: "#CECFD2", fontSize: '16px' }}>Build</p>}
+                        <div
+                              className={`sub-header ${state === "collapsed" ? "center-toggle" : ""
+                                    }`}
+                        >
+                              {state === "expanded" && (
+                                    <p className="sub-title">Build</p>
+                              )}
+
                               <button onClick={onToggleSize}>
-                                    {state === "expanded" ? "⟨" : "⟩"}
+                                    <FiSidebar size={22} color="slateblue" />
                               </button>
                         </div>
 
@@ -25,7 +33,7 @@ export default function SubSidebar({ state, onToggleSize }) {
                         </div>
                   </div>
 
-                  {/* bottom credits */}
+                  {/* bottom */}
                   <div className="sub-sidebar-footer">
                         <div className="credit-ring">
                               <span>0%</span>
