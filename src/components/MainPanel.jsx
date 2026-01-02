@@ -4,10 +4,10 @@ export default function MainPanel() {
                   <div className="card">
                         <div className="card-icon">📦</div>
 
-                        <p>Link your knowledge base so Agents answer faster and better</p>
+                        <p>Create, Test and Deploy your Agents Seamlessly</p>
 
                         <button className="btn btn-outline">Read Docs</button>
-                        <button className="btn btn-primary">+ Add Knowledge Base</button>
+                        <button className="btn btn-primary">+ Create Agent</button>
                   </div>
             </div>
       );

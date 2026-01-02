@@ -6,7 +6,7 @@ export default function SubSidebar({ state, onToggleSize }) {
                   {/* top */}
                   <div>
                         <div className="sub-header">
-                              {state === "expanded" && <span>Build</span>}
+                              {state === "expanded" && <p style={{ color: "#CECFD2", fontSize: '16px' }}>Build</p>}
                               <button onClick={onToggleSize}>
                                     {state === "expanded" ? "⟨" : "⟩"}
                               </button>

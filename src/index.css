@@ -53,7 +53,8 @@ body {
   width: 240px;
   background: linear-gradient(180deg, #0c111d, #0b1020);
   border-right: 1px solid #1f2937;
-  padding: 16px;
+  /* padding: 16px; */
+  padding: 16px 1px 27px 1px;
 }
 
 .sub-sidebar h3 {
@@ -165,7 +166,7 @@ body {
 }
 
 .sub-sidebar.expanded {
-  width: 240px;
+  width: 220px;
 }
 
 .sub-sidebar.collapsed {
@@ -359,3 +360,6 @@ body {
   font-size: 11px;
   color: #6b7280;
 }
+
+
+
