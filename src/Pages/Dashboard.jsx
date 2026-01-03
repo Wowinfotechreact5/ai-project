@@ -11,7 +11,7 @@ export default function Dashboard() {
       };
       const btnClick = () => {
             // '_blank' tells the browser to open a new tab
-            window.open('https://docs.inya.ai/introduction', '_blank', 'noopener,noreferrer');
+            window.open('https://www.wowinfotech.com/', '_blank', 'noopener,noreferrer');
       };
       return (
             <MainPanel >
