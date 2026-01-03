@@ -4,7 +4,6 @@ import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import Header from "./components/Header";
 import LeftSidebar from "./components/LeftSidebar";
 import SubSidebar from "./components/SubSidebar";
-import MainPanel from "./components/MainPanel";
 
 // pages
 import Dashboard from "./pages/Dashboard";

@@ -31,8 +31,8 @@ export default function ProfileDropdown({ open, anchorRef }) {
                               SW
                         </div>
                         <div className="leading-tight">
-                              <p className="text-sm font-medium text-white">Sagar Wow</p>
-                              <p className="text-xs text-gray-400">wowjrdotnet@gmail.com</p>
+                              <p className="text-sm font-medium text-white">Sandeep maurya</p>
+                              <p className="text-xs text-gray-400">aniketDon@gmail.com</p>
                         </div>
                   </div>
 

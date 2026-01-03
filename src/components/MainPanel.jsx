@@ -1,7 +1,17 @@
-export default function MainPanel({ title }) {
+export default function MainPanel({ title, children }) {
       return (
-            <div className="content">
-                  <h2>{title}</h2>
+            <div className="p-2 text-gray-200">
+                  {/* Page Title */}
+                  <h1 className="text-lg font-semibold mb-4">
+                        {title}
+                  </h1>
+
+                  {/* CENTER ONLY PAGE CONTENT */}
+                  <div className="flex justify-center">
+                        <div >
+                              {children}
+                        </div>
+                  </div>
             </div>
       );
 }
