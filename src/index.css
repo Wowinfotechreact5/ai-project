@@ -131,21 +131,6 @@ body {
   flex-direction: column;
 }
 
-/* HEADER */
-.header {
-  height: 56px;
-  display: flex;
-  align-items: center;
-  padding: 0 20px;
-  border-bottom: 1px solid #1f2937;
-  background: linear-gradient(180deg, #0c111d, #0b1020);
-}
-
-.header-title {
-  font-size: 16px;
-  font-weight: 600;
-}
-
 /* CONTENT */
 .content {
   flex: 1;
