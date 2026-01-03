@@ -1,4 +1,5 @@
 import { FiSidebar } from "react-icons/fi";
+import { NavLink } from "react-router-dom";
 
 export default function SubSidebar({ state, onToggleSize }) {
       if (state === "closed") return null;
@@ -20,17 +21,24 @@ export default function SubSidebar({ state, onToggleSize }) {
                               </button>
                         </div>
 
-                        <div className="menu-item active">
-                              📚 {state === "expanded" && "Dashboard"}
-                        </div>
+                        {/* ROUTE-BASED MENU */}
+                        <NavLink
+                              to="/knowledge-base"
+                              className={({ isActive }) =>
+                                    `menu-item ${isActive ? "active" : ""}`
+                              }
+                        >
+                              📚 {state === "expanded" && "Knowledge Base"}
+                        </NavLink>
 
-                        <div className="menu-item">
-                              ⚡ {state === "expanded" && "Knowledge Base"}
-                        </div>
-
-                        <div className="menu-item">
+                        <NavLink
+                              to="/agent-chains"
+                              className={({ isActive }) =>
+                                    `menu-item ${isActive ? "active" : ""}`
+                              }
+                        >
                               🔗 {state === "expanded" && "Agent Chains"}
-                        </div>
+                        </NavLink>
                   </div>
 
                   {/* bottom */}
