@@ -50,10 +50,33 @@ const TASKS = [
     ]
   }
 ];
-
 function AppLayout() {
+  const [openGetStarted, setOpenGetStarted] = useState(false);
+  const [activeTask, setActiveTask] = useState(null);
+
+  const dropdownRef = useRef(null);
+  const popoverRef = useRef(null);
   const [sidebarState, setSidebarState] = useState("expanded");
   // "closed" | "collapsed" | "expanded"
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (
+        popoverRef.current &&
+        !popoverRef.current.contains(event.target)
+      ) {
+        setOpenGetStarted(false);
+        setActiveTask(null);
+      }
+    }
+
+    if (openGetStarted) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [openGetStarted]);
 
   const location = useLocation();
 
@@ -74,10 +97,7 @@ function AppLayout() {
   const handleGetStarted = () => {
     window.open('https://docs.inya.ai/introduction', '_blank', 'noopener,noreferrer');
   };
-  const [openGetStarted, setOpenGetStarted] = useState(false);
-  const [activeTask, setActiveTask] = useState(null);
 
-  const dropdownRef = useRef(null);
 
   useEffect(() => {
     function handleClickOutside(e) {
@@ -137,7 +157,7 @@ function AppLayout() {
 
       </div>
       {openGetStarted && !activeTask && (
-        <div className="fixed bottom-20 right-6 w-[360px] rounded-2xl
+        <div ref={popoverRef} className="fixed bottom-5 right-6 w-[360px] rounded-2xl
                   border border-[#1f2937] bg-gradient-to-b
                   from-[#0f172a] to-[#020617] shadow-2xl z-50">
 
@@ -168,7 +188,7 @@ function AppLayout() {
         </div>
       )}
       {openGetStarted && activeTask && (
-        <div className="fixed bottom-20 right-6 w-[420px] h-[520px]
+        <div ref={popoverRef} className="fixed bottom-5 right-6 w-[420px] h-[550px]
                   rounded-2xl border border-[#1f2937]
                   bg-gradient-to-b from-[#0f172a] to-[#020617]
                   shadow-2xl z-50 flex flex-col">
