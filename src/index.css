@@ -20,9 +20,8 @@ body {
 /* LEFT ICON SIDEBAR */
 .left-sidebar {
   width: 56px;
-  background: #0c111d;
   border-right: 1px solid #1f2937;
-  display: flex;
+ 
   flex-direction: column;
   align-items: center;
   padding-top: 9px;

@@ -7,6 +7,17 @@ import 'react-tooltip/dist/react-tooltip.css';
 import { useRef, useState } from "react";
 import ProfileDropdown from "./ProfileDropdown";
 import { NavLink, useNavigate } from "react-router-dom";
+const navIconClass = ({ isActive }) =>
+      `
+    w-10 h-10
+    flex items-center justify-center
+    rounded-lg
+    transition-colors duration-200
+    ${isActive
+            ? "bg-[#6846ba] text-white"
+            : "text-gray-300 hover:text-white hover:bg-[#2a2f3a]"
+      }
+  `;
 
 export default function LeftSidebar({ onToggle }) {
       const [open, setOpen] = useState(false);
@@ -14,11 +25,11 @@ export default function LeftSidebar({ onToggle }) {
       const navigate = useNavigate()
       return (
             <>
-                  <aside className="left-sidebar flex flex-col justify-between">
+                  <aside className="left-sidebar flex flex-col justify-between bg-[#1f242f]">
 
                         {/* TOP SECTION */}
                         <div>
-                              {/* Logo */}
+                              {/* yaha pr Logo */}
                               <div className="logo-wrapper">
                                     <div className="logo">✦</div>
                               </div>
@@ -27,43 +38,22 @@ export default function LeftSidebar({ onToggle }) {
 
                               {/* ROUTES */}
                               <div className="flex flex-col gap-3 pt-4 pb-6">
-                                    <button
-                                          onClick={() => navigate('/')}
-                                          // onClick={onToggle}
-                                          data-tooltip-id="sidebar-tooltip"
-                                          data-tooltip-content="Toggle Sidebar"
-                                          className="p-2 text-gray-300 hover:text-white"
-                                    >
-                                          <MdDashboard size={20} />
-                                    </button>
 
-                                    <NavLink
-                                          to="/knowledge-base"
-                                          className={({ isActive }) =>
-                                                `sidebar-icon ${isActive ? "active" : ""}`
-                                          }
-                                          title="Build"
 
-                                    >
+                                    <NavLink to="/" className={navIconClass}>
+                                          <MdDashboard size={18} />
+                                    </NavLink>
+                                    <NavLink to="/knowledge-base" className={navIconClass}>
                                           <FaTools size={18} />
                                     </NavLink>
 
-                                    <NavLink
-                                          to="/monitor"
-                                          className={({ isActive }) =>
-                                                `sidebar-icon ${isActive ? "active" : ""}`
-                                          }
-                                          title="Monitor"
-                                    // onClick={onToggle}
-                                    >
+                                    <NavLink to="/monitor" className={navIconClass}>
                                           <FiPieChart size={18} />
                                     </NavLink>
 
                                     <NavLink
                                           to="/manage"
-                                          className={({ isActive }) =>
-                                                `sidebar-icon ${isActive ? "active" : ""}`
-                                          }
+                                          className={navIconClass}
                                           title="Manage"
                                     // onClick={onToggle}
                                     >
